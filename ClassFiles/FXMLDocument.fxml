@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="868.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.FXMLDocumentController">
+   <children>
+      <Accordion prefHeight="510.0" prefWidth="868.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <panes>
+          <TitledPane animated="false" graphicTextGap="10.0" text="Tomato">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <Label layoutX="712.0" layoutY="15.0" text="Time (hh:mm):" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="85.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Tomato.gif" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="187.0" text="Watering Frequency(Hrs):" />
+                        <Label layoutX="26.0" layoutY="214.0" text="Fertilizing Frequency(Hrs):" />
+                        <Label layoutX="27.0" layoutY="241.0" text="Minimum Temperature(F):" />
+                        <Label layoutX="27.0" layoutY="268.0" text="Maximum Temperature(F):" />
+                        <Label fx:id="tomatoWaterFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="186.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="tomatoFertilizerFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="213.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="tomatoMinTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="240.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="tomatoMaxTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="269.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="212.0" layoutY="183.0" mnemonicParsing="false" onAction="#tomatoIncWaterFreq" text="+" />
+                        <Button layoutX="243.0" layoutY="183.0" mnemonicParsing="false" onAction="#tomatoDecWaterFreq" text="-" />
+                        <Button layoutX="243.0" layoutY="210.0" mnemonicParsing="false" onAction="#tomatoDecMaxFertFreq" text="-" />
+                        <Button layoutX="212.0" layoutY="210.0" mnemonicParsing="false" onAction="#tomatoIncMaxFertFreq" text="+" />
+                        <Button layoutX="212.0" layoutY="237.0" mnemonicParsing="false" onAction="#tomatoIncMinTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="237.0" mnemonicParsing="false" onAction="#tomatoDecMinTemp" text="-" />
+                        <Button layoutX="212.0" layoutY="264.0" mnemonicParsing="false" onAction="#tomatoIncMaxTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="266.0" mnemonicParsing="false" onAction="#tomatoDecMaxTemp" text="-" />
+                        <Label layoutX="296.0" layoutY="57.0" text="Humidity Level: " />
+                        <Label fx:id="tomatoMoisture" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="56.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="111.0" text="Temperature(F): " />
+                        <Label fx:id="tomatoTemperature" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="110.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="753.0" layoutY="44.0" text="Day:" />
+                        <Label fx:id="tomatoTime" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="14.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="tomatoDay" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="43.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="434.0" layoutY="53.0" mnemonicParsing="false" onAction="#tomatoGiveWater" prefHeight="25.0" prefWidth="96.0" text="Give Water" />
+                        <Button layoutX="433.0" layoutY="107.0" mnemonicParsing="false" onAction="#tomatoHeaterOn" text="Turn Heater On" />
+                        <Button layoutX="531.0" layoutY="107.0" mnemonicParsing="false" onAction="#tomatoCoolerOn" text="Turn Cooler On" />
+                        <Button layoutX="434.0" layoutY="80.0" mnemonicParsing="false" onAction="#tomatoGiveFertilizer" prefHeight="25.0" prefWidth="96.0" text="Give Fertilizer" />
+                        <Label layoutX="296.0" layoutY="84.0" text="Fertilizer(lbs): " />
+                        <Label fx:id="tomatoFertilizerAmount" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="83.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <TextArea fx:id="tomatoTextArea" layoutX="385.0" layoutY="150.0" prefHeight="200.0" prefWidth="450.0" style="-fx-border-color: #000;" />
+                        <Label layoutX="601.0" layoutY="57.0" text="Heater Status: " />
+                        <Label layoutX="601.0" layoutY="75.0" text="Cooler Status: " />
+                        <Label fx:id="tomatoHeaterStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="679.0" layoutY="56.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label fx:id="tomatoCoolerStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="679.0" layoutY="75.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label fx:id="tomatoPlantAge" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="28.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="29.0" text="Plant Age(%):" />
+                        <Label layoutX="296.0" layoutY="150.0" text="Event Log: " />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+            <TitledPane animated="false" graphicTextGap="10.0" text="Potato">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <Label layoutX="717.0" layoutY="15.0" text="Time(hh:mm):" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@potato.gif" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="187.0" text="Watering Frequency(Hrs):" />
+                        <Label layoutX="26.0" layoutY="214.0" text="Fertilizing Frequency(Hrs):" />
+                        <Label layoutX="27.0" layoutY="241.0" text="Minimum Temperature(F):" />
+                        <Label layoutX="27.0" layoutY="268.0" text="Maximum Temperature(F):" />
+                        <Label fx:id="potatoWaterFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="186.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="potatoFertilizerFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="213.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="potatoMinTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="240.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="potatoMaxTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="269.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="212.0" layoutY="183.0" mnemonicParsing="false" onAction="#potatoIncWaterFreq" text="+" />
+                        <Button layoutX="243.0" layoutY="183.0" mnemonicParsing="false" onAction="#potatoDecWaterFreq" text="-" />
+                        <Button layoutX="243.0" layoutY="210.0" mnemonicParsing="false" onAction="#potatoDecMaxFertFreq" text="-" />
+                        <Button layoutX="212.0" layoutY="210.0" mnemonicParsing="false" onAction="#potatoIncMaxFertFreq" text="+" />
+                        <Button layoutX="212.0" layoutY="237.0" mnemonicParsing="false" onAction="#potatoIncMinTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="237.0" mnemonicParsing="false" onAction="#potatoDecMinTemp" text="-" />
+                        <Button layoutX="212.0" layoutY="264.0" mnemonicParsing="false" onAction="#potatoIncMaxTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="266.0" mnemonicParsing="false" onAction="#potatoDecMaxTemp" text="-" />
+                        <Label layoutX="296.0" layoutY="57.0" text="Humidity Level: " />
+                        <Label fx:id="potatoMoisture" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="56.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="111.0" text="Temperature(F): " />
+                        <Label fx:id="potatoTemperature" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="110.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="753.0" layoutY="44.0" text="Day:" />
+                        <Label fx:id="potatoTime" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="14.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="potatoDay" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="43.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="434.0" layoutY="53.0" mnemonicParsing="false" onAction="#potatoGiveWater" prefHeight="25.0" prefWidth="96.0" text="Give Water" />
+                        <Button layoutX="433.0" layoutY="107.0" mnemonicParsing="false" onAction="#potatoHeaterOn" text="Turn Heater On" />
+                        <Button layoutX="531.0" layoutY="107.0" mnemonicParsing="false" onAction="#potatoCoolerOn" text="Turn Cooler On" />
+                        <Button layoutX="434.0" layoutY="80.0" mnemonicParsing="false" onAction="#potatoGiveFertilizer" prefHeight="25.0" prefWidth="96.0" text="Give Fertilizer" />
+                        <Label layoutX="296.0" layoutY="84.0" text="Fertilizer(lbs): " />
+                        <Label fx:id="potatoFertilizerAmount" alignment="CENTER" contentDisplay="CENTER" layoutX="386.0" layoutY="83.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="potatoCoolerStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="678.0" layoutY="74.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label fx:id="potatoHeaterStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="678.0" layoutY="55.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label layoutX="600.0" layoutY="74.0" text="Cooler Status: " />
+                        <Label layoutX="600.0" layoutY="56.0" text="Heater Status: " />
+                        <Label layoutX="296.0" layoutY="27.0" text="Plant Age(%):" />
+                        <Label fx:id="potatoPlantAge" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="26.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <TextArea fx:id="potatoTextArea" layoutX="385.0" layoutY="141.0" prefHeight="200.0" prefWidth="450.0" style="-fx-border-color: #000;" />
+                        <Label layoutX="296.0" layoutY="141.0" text="Event Log: " />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" graphicTextGap="10.0" text="Basil">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFF;">
+                     <children>
+                        <Label layoutX="716.0" layoutY="15.0" text="Time(hh:mm):" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tulsi.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="187.0" text="Watering Frequency(Hrs):" />
+                        <Label layoutX="26.0" layoutY="214.0" text="Fertilizing Frequency(Hrs):" />
+                        <Label layoutX="27.0" layoutY="241.0" text="Minimum Temperature(F):" />
+                        <Label layoutX="27.0" layoutY="268.0" text="Maximum Temperature(F):" />
+                        <Label fx:id="basilWaterFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="186.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="basilFertilizerFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="213.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="basilMinTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="240.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="basilMaxTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="269.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="212.0" layoutY="183.0" mnemonicParsing="false" onAction="#basilIncWaterFreq" text="+" />
+                        <Button layoutX="243.0" layoutY="183.0" mnemonicParsing="false" onAction="#basilDecWaterFreq" text="-" />
+                        <Button layoutX="243.0" layoutY="210.0" mnemonicParsing="false" onAction="#basilDecMaxFertFreq" text="-" />
+                        <Button layoutX="212.0" layoutY="210.0" mnemonicParsing="false" onAction="#basilIncMaxFertFreq" text="+" />
+                        <Button layoutX="212.0" layoutY="237.0" mnemonicParsing="false" onAction="#basilIncMinTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="237.0" mnemonicParsing="false" onAction="#basilDecMinTemp" text="-" />
+                        <Button layoutX="212.0" layoutY="264.0" mnemonicParsing="false" onAction="#basilIncMaxTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="266.0" mnemonicParsing="false" onAction="#basilDecMaxTemp" text="-" />
+                        <Label layoutX="296.0" layoutY="57.0" text="Humidity Level: " />
+                        <Label fx:id="basilMoisture" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="56.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="111.0" text="Temperature(F): " />
+                        <Label fx:id="basilTemperature" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="110.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="753.0" layoutY="44.0" text="Day:" />
+                        <Label fx:id="basilTime" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="14.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="basilDay" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="43.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="434.0" layoutY="53.0" mnemonicParsing="false" onAction="#basilGiveWater" prefHeight="25.0" prefWidth="96.0" text="Give Water" />
+                        <Button layoutX="433.0" layoutY="107.0" mnemonicParsing="false" onAction="#basilHeaterOn" text="Turn Heater On" />
+                        <Button layoutX="531.0" layoutY="107.0" mnemonicParsing="false" onAction="#basilCoolerOn" text="Turn Cooler On" />
+                        <Button layoutX="434.0" layoutY="80.0" mnemonicParsing="false" onAction="#basilGiveFertilizer" prefHeight="25.0" prefWidth="96.0" text="Give Fertilizer" />
+                        <Label layoutX="296.0" layoutY="84.0" text="Fertilizer(lbs): " />
+                        <Label fx:id="basilFertilizerAmount" alignment="CENTER" contentDisplay="CENTER" layoutX="386.0" layoutY="83.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="603.0" layoutY="57.0" text="Heater Status: " />
+                        <Label layoutX="603.0" layoutY="75.0" text="Cooler Status: " />
+                        <Label fx:id="basilHeaterStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="681.0" layoutY="56.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label fx:id="basilCoolerStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="681.0" layoutY="75.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="25.0" text="Plant Age(%):" />
+                        <Label fx:id="basilPlantAge" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="24.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="141.0" text="Event Log: " />
+                        <TextArea fx:id="basilTextArea" layoutX="385.0" layoutY="141.0" prefHeight="200.0" prefWidth="450.0" style="-fx-border-color: #000;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" graphicTextGap="10.0" text="Lettuce">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFF;">
+                     <children>
+                        <Label layoutX="716.0" layoutY="15.0" text="Time(hh:mm):" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@lettuce.gif" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="187.0" text="Watering Frequency(Hrs):" />
+                        <Label layoutX="26.0" layoutY="214.0" text="Fertilizing Frequency(Hrs):" />
+                        <Label layoutX="27.0" layoutY="241.0" text="Minimum Temperature(F):" />
+                        <Label layoutX="27.0" layoutY="268.0" text="Maximum Temperature(F):" />
+                        <Label fx:id="lettuceWaterFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="186.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="lettuceFertilizerFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="213.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="lettuceMinTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="240.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="lettuceMaxTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="269.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="212.0" layoutY="183.0" mnemonicParsing="false" onAction="#lettuceIncWaterFreq" text="+" />
+                        <Button layoutX="243.0" layoutY="183.0" mnemonicParsing="false" onAction="#lettuceDecWaterFreq" text="-" />
+                        <Button layoutX="243.0" layoutY="210.0" mnemonicParsing="false" onAction="#lettuceDecMaxFertFreq" text="-" />
+                        <Button layoutX="212.0" layoutY="210.0" mnemonicParsing="false" onAction="#lettuceIncMaxFertFreq" text="+" />
+                        <Button layoutX="212.0" layoutY="237.0" mnemonicParsing="false" onAction="#lettuceIncMinTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="237.0" mnemonicParsing="false" onAction="#lettuceDecMinTemp" text="-" />
+                        <Button layoutX="212.0" layoutY="264.0" mnemonicParsing="false" onAction="#lettuceIncMaxTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="266.0" mnemonicParsing="false" onAction="#lettuceDecMaxTemp" text="-" />
+                        <Label layoutX="296.0" layoutY="57.0" text="Humidity Level: " />
+                        <Label fx:id="lettuceMoisture" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="56.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="111.0" text="Temperature(F): " />
+                        <Label fx:id="lettuceTemperature" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="110.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="753.0" layoutY="44.0" text="Day:" />
+                        <Label fx:id="lettuceTime" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="14.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="lettuceDay" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="43.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="434.0" layoutY="53.0" mnemonicParsing="false" onAction="#lettuceGiveWater" prefHeight="25.0" prefWidth="96.0" text="Give Water" />
+                        <Button layoutX="433.0" layoutY="107.0" mnemonicParsing="false" onAction="#lettuceHeaterOn" text="Turn Heater On" />
+                        <Button layoutX="531.0" layoutY="107.0" mnemonicParsing="false" onAction="#lettuceCoolerOn" text="Turn Cooler On" />
+                        <Button layoutX="434.0" layoutY="80.0" mnemonicParsing="false" onAction="#lettuceGiveFertilizer" prefHeight="25.0" prefWidth="96.0" text="Give Fertilizer" />
+                        <Label layoutX="296.0" layoutY="84.0" text="Fertilizer(lbs): " />
+                        <Label fx:id="lettuceFertilizerAmount" alignment="CENTER" contentDisplay="CENTER" layoutX="386.0" layoutY="83.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="lettuceCoolerStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="682.0" layoutY="74.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label fx:id="lettuceHeaterStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="682.0" layoutY="55.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label layoutX="604.0" layoutY="74.0" text="Cooler Status: " />
+                        <Label layoutX="604.0" layoutY="56.0" text="Heater Status: " />
+                        <Label layoutX="296.0" layoutY="25.0" text="Plant Age(%):" />
+                        <Label fx:id="lettucePlantAge" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="24.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <TextArea fx:id="lettuceTextArea" layoutX="385.0" layoutY="141.0" prefHeight="200.0" prefWidth="450.0" style="-fx-border-color: #000;" />
+                        <Label layoutX="296.0" layoutY="141.0" text="Event Log: " />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" graphicTextGap="10.0" text="Strawberry">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFF;">
+                     <children>
+                        <Label layoutX="716.0" layoutY="15.0" text="Time(hh:mm):" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Strawberry.gif" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="187.0" text="Watering Frequency(Hrs):" />
+                        <Label layoutX="26.0" layoutY="214.0" text="Fertilizing Frequency(Hrs):" />
+                        <Label layoutX="27.0" layoutY="241.0" text="Minimum Temperature(F):" />
+                        <Label layoutX="27.0" layoutY="268.0" text="Maximum Temperature(F):" />
+                        <Label fx:id="strawberryWaterFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="186.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="strawberryFertilizerFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="213.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="strawberryMinTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="240.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="strawberryMaxTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="269.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="212.0" layoutY="183.0" mnemonicParsing="false" onAction="#strawberryIncWaterFreq" text="+" />
+                        <Button layoutX="243.0" layoutY="183.0" mnemonicParsing="false" onAction="#strawberryDecWaterFreq" text="-" />
+                        <Button layoutX="243.0" layoutY="210.0" mnemonicParsing="false" onAction="#strawberryDecMaxFertFreq" text="-" />
+                        <Button layoutX="212.0" layoutY="210.0" mnemonicParsing="false" onAction="#strawberryIncMaxFertFreq" text="+" />
+                        <Button layoutX="212.0" layoutY="237.0" mnemonicParsing="false" onAction="#strawberryIncMinTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="237.0" mnemonicParsing="false" onAction="#strawberryDecMinTemp" text="-" />
+                        <Button layoutX="212.0" layoutY="264.0" mnemonicParsing="false" onAction="#strawberryIncMaxTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="266.0" mnemonicParsing="false" onAction="#strawberryDecMaxTemp" text="-" />
+                        <Label layoutX="296.0" layoutY="57.0" text="Humidity Level: " />
+                        <Label fx:id="strawberryMoisture" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="56.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="111.0" text="Temperature(F): " />
+                        <Label fx:id="strawberryTemperature" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="110.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="753.0" layoutY="44.0" text="Day:" />
+                        <Label fx:id="strawberryTime" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="14.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="strawberryDay" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="43.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="434.0" layoutY="53.0" mnemonicParsing="false" onAction="#strawberryGiveWater" prefHeight="25.0" prefWidth="96.0" text="Give Water" />
+                        <Button layoutX="433.0" layoutY="107.0" mnemonicParsing="false" onAction="#strawberryHeaterOn" text="Turn Heater On" />
+                        <Button layoutX="531.0" layoutY="107.0" mnemonicParsing="false" onAction="#strawberryCoolerOn" text="Turn Cooler On" />
+                        <Button layoutX="434.0" layoutY="80.0" mnemonicParsing="false" onAction="#strawberryGiveFertilizer" prefHeight="25.0" prefWidth="96.0" text="Give Fertilizer" />
+                        <Label layoutX="296.0" layoutY="84.0" text="Fertilizer(lbs): " />
+                        <Label fx:id="strawberryFertilizerAmount" alignment="CENTER" contentDisplay="CENTER" layoutX="386.0" layoutY="83.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="609.0" layoutY="60.0" text="Heater Status: " />
+                        <Label layoutX="609.0" layoutY="78.0" text="Cooler Status: " />
+                        <Label fx:id="strawberryHeaterStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="687.0" layoutY="59.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label fx:id="strawberryCoolerStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="687.0" layoutY="78.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="25.0" text="Plant Age(%):" />
+                        <Label fx:id="strawberryPlantAge" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="24.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="141.0" text="Event Log: " />
+                        <TextArea fx:id="strawberryTextArea" layoutX="385.0" layoutY="141.0" prefHeight="200.0" prefWidth="450.0" style="-fx-border-color: #000;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" graphicTextGap="10.0" text="Blueberry">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFF;">
+                     <children>
+                        <Label layoutX="716.0" layoutY="15.0" text="Time(hh:mm):" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="62.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@blueberry.gif" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="187.0" text="Watering Frequency(Hrs):" />
+                        <Label layoutX="26.0" layoutY="214.0" text="Fertilizing Frequency(Hrs):" />
+                        <Label layoutX="27.0" layoutY="241.0" text="Minimum Temperature(F):" />
+                        <Label layoutX="27.0" layoutY="268.0" text="Maximum Temperature(F):" />
+                        <Label fx:id="blueberryWaterFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="186.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="blueberryFertilizerFrequency" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="213.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="blueberryMinTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="240.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="blueberryMaxTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="269.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="212.0" layoutY="183.0" mnemonicParsing="false" onAction="#blueberryIncWaterFreq" text="+" />
+                        <Button layoutX="243.0" layoutY="183.0" mnemonicParsing="false" onAction="#blueberryDecWaterFreq" text="-" />
+                        <Button layoutX="243.0" layoutY="210.0" mnemonicParsing="false" onAction="#blueberryDecMaxFertFreq" text="-" />
+                        <Button layoutX="212.0" layoutY="210.0" mnemonicParsing="false" onAction="#blueberryIncMaxFertFreq" text="+" />
+                        <Button layoutX="212.0" layoutY="237.0" mnemonicParsing="false" onAction="#blueberryIncMinTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="237.0" mnemonicParsing="false" onAction="#blueberryDecMinTemp" text="-" />
+                        <Button layoutX="212.0" layoutY="264.0" mnemonicParsing="false" onAction="#blueberryIncMaxTemp" text="+" />
+                        <Button layoutX="243.0" layoutY="266.0" mnemonicParsing="false" onAction="#blueberryDecMaxTemp" text="-" />
+                        <Label layoutX="296.0" layoutY="57.0" text="Humidity Level: " />
+                        <Label fx:id="blueberryMoisture" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="56.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="296.0" layoutY="111.0" text="Temperature(F): " />
+                        <Label fx:id="blueberryTemperature" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="110.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label layoutX="753.0" layoutY="44.0" text="Day:" />
+                        <Label fx:id="blueberryTime" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="14.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="blueberryDay" alignment="CENTER" contentDisplay="CENTER" layoutX="791.0" layoutY="43.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Button layoutX="434.0" layoutY="53.0" mnemonicParsing="false" onAction="#blueberryGiveWater" prefHeight="25.0" prefWidth="96.0" text="Give Water" />
+                        <Button layoutX="433.0" layoutY="107.0" mnemonicParsing="false" onAction="#blueberryHeaterOn" text="Turn Heater On" />
+                        <Button layoutX="531.0" layoutY="107.0" mnemonicParsing="false" onAction="#blueberryCoolerOn" text="Turn Cooler On" />
+                        <Button layoutX="434.0" layoutY="80.0" mnemonicParsing="false" onAction="#blueberryGiveFertilizer" prefHeight="25.0" prefWidth="96.0" text="Give Fertilizer" />
+                        <Label layoutX="296.0" layoutY="84.0" text="Fertilizer(lbs): " />
+                        <Label fx:id="blueberryFertilizerAmount" alignment="CENTER" contentDisplay="CENTER" layoutX="386.0" layoutY="83.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <Label fx:id="blueberryCoolerStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="682.0" layoutY="72.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label fx:id="blueberryHeaterStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="682.0" layoutY="53.0" maxWidth="52.0" minWidth="40.0" prefHeight="19.0" prefWidth="52.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="OFF" textAlignment="CENTER" />
+                        <Label layoutX="604.0" layoutY="72.0" text="Cooler Status: " />
+                        <Label layoutX="604.0" layoutY="54.0" text="Heater Status: " />
+                        <Label layoutX="296.0" layoutY="25.0" text="Plant Age(%):" />
+                        <Label fx:id="blueberryPlantAge" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="24.0" maxWidth="40.0" minWidth="40.0" style="-fx-background-color: #FFF; -fx-border-color: #000;" text="0" textAlignment="CENTER" />
+                        <TextArea fx:id="blueberryTextArea" layoutX="385.0" layoutY="141.0" prefHeight="200.0" prefWidth="450.0" style="-fx-border-color: #000;" />
+                        <Label layoutX="296.0" layoutY="141.0" text="Event Log: " />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
